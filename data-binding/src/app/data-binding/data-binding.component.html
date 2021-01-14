@@ -75,13 +75,13 @@
         </div>
     </article> -->
 
-    <article>
+    <!-- <article>
         <h3>Two-way data Binding</h3>
         <div>
-            <!-- <input type="text"
+            <input type="text"
                 [value]="nome"
                 (input)="nome = $event.target.value"
-            > -->
+            >
 
             <input type="text"
                 [ngModel]="nome"
@@ -100,5 +100,15 @@
 
             <p>Meu nome é {{ pessoa.nome }} e tenho {{ pessoa.idade }} idade.</p>
         </div>
-    </article>
+    </article> -->
+
+    <section class="input-output-properties">
+        <article>
+            <h3>Input/Output Properties</h3>
+    
+            <app-curso [nome]="nomeDoCurso"></app-curso>
+
+            <contador [valor]="valorInicial" (mudouValor)="onMudouValor($event)"></contador>
+        </article>
+    </section>
 </section>
