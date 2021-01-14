@@ -9,6 +9,18 @@ export class DataBindingComponent implements OnInit {
 
   url: string = 'http://loiane.com';
 
+  cursoAngular: boolean = true;
+
+  urlImagem: string = "https://pngimage.net/wp-content/uploads/2019/05/meliodas-simbolo-png-1.png"
+
+  getValor(){
+    return 1;
+  }
+
+  getCurtirCurso(){
+    return true;
+  }
+
   constructor() { }
 
   ngOnInit(): void {
