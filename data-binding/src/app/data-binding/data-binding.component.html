@@ -12,7 +12,8 @@
         <h3>Property Binding</h3>
         <img src="{{ urlImagem }}">
         <img [src]="urlImagem">
-    </article> -->
+        <img bind-src="urlImagem">
+    </article>
 
     <article>
         <h3>Class e Style Binding</h3>
@@ -71,6 +72,33 @@
                 (mouseout)="onMouseOverOut()"
                 [class.highlight]="isMouseOver"
             >Passe o mouse sobre mim.</span>
+        </div>
+    </article> -->
+
+    <article>
+        <h3>Two-way data Binding</h3>
+        <div>
+            <!-- <input type="text"
+                [value]="nome"
+                (input)="nome = $event.target.value"
+            > -->
+
+            <input type="text"
+                [ngModel]="nome"
+                (ngModelChange)="nome = $event"
+            >
+
+            <input type="text" [(ngModel)]="nome">
+            <input type="text" bindon-ngModel="nome">
+
+            <p>Você digitou: {{ nome }}</p>
+        </div>
+
+        <div>
+            <input type="text" [(ngModel)]="pessoa.nome">
+            <input type="text" [(ngModel)]="pessoa.idade">
+
+            <p>Meu nome é {{ pessoa.nome }} e tenho {{ pessoa.idade }} idade.</p>
         </div>
     </article>
 </section>
