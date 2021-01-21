@@ -14,6 +14,7 @@ import { DiretivaOperadorElvisComponent } from './diretiva-operador-elvis/direti
 import { ExemploNgContentComponent } from './exemplo-ng-content/exemplo-ng-content.component';
 import { FundoAmareloDirective } from './shared/fundo-amarelo.directive';
 import { DiretivasCustomizadasComponent } from './diretivas-customizadas/diretivas-customizadas.component';
+import { HighlightMouseDirective } from './shared/highlight-mouse.directive';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { DiretivasCustomizadasComponent } from './diretivas-customizadas/diretiv
     DiretivaOperadorElvisComponent,
     ExemploNgContentComponent,
     FundoAmareloDirective,
-    DiretivasCustomizadasComponent
+    DiretivasCustomizadasComponent,
+    HighlightMouseDirective
   ],
   imports: [
     BrowserModule,
