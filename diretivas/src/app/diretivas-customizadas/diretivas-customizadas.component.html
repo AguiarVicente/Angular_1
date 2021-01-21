@@ -8,10 +8,18 @@
     Texto com Highlight quando passar o mouse.
 </p>
 
-<p highlight [defaultColor]="'grey'" [heighlightColor]="'red'">
-    Texto com cores customizadas
-</p>
-
 <p [highlight]="'red'" [defaultColor]="'grey'">
     Texto com cores customizadas
 </p>
+
+<div *ngIf="mostrarCursos">
+    Lista de cursos agui.
+</div>
+
+<div *ngElse="mostrarCursos">
+    Não existem cursos para serem listados.
+</div>
+
+<br>
+
+<button (click)="onMostrarCurso()">Mostrar ou esconder cursos</button>
