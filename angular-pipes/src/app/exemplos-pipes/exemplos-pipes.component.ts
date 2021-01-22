@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { interval } from 'rxjs';
 
 @Component({
   selector: 'app-exemplos-pipes',
@@ -38,6 +39,13 @@ export class ExemplosPipesComponent implements OnInit {
       return false;
     });
   }
+
+  valorAsync = new Promise( (resolve, reject) => {
+    setTimeout( () => resolve('Valor Assíncrono'), 2000);
+  });
+
+  // valorAsync2 = interval(2000).subscribe( valor => console.log(valor++))
+  // não recomendado faer desta forma
 
   constructor() { }
 
