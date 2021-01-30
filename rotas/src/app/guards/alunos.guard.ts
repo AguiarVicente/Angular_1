@@ -13,8 +13,8 @@ export class AlunosGuard implements CanActivateChild{
     console.log('Alunos guarda')
 
     if(state.url.includes('editar')){
-      alert('Usuário sem acesso');
-      return of(false);
+      // alert('Usuário sem acesso');
+      // return of(false);
     }
     return true;
   }
