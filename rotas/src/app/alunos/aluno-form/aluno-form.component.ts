@@ -44,11 +44,13 @@ export class AlunoFormComponent implements OnInit, OnDestroy, IFormCanDeactivate
   }
 
   podeMudarRota(){
-    if(this.formMudou){
-      confirm('Tem certeza que deseja sair dessa página?');
-    }
+  this.formMudou = confirm('Tem certeza que deseja sair dessa página?');
 
-    return true;
+    if(this.formMudou){
+      return true
+    }else {
+      return false
+    }
   }
 
   podeDesativar(){
