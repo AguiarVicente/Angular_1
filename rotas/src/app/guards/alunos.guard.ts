@@ -2,7 +2,9 @@ import { Observable, of } from 'rxjs';
 import { CanActivateChild, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { Injectable } from '@angular/core';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class AlunosGuard implements CanActivateChild{
 
   canActivateChild(
@@ -10,7 +12,7 @@ export class AlunosGuard implements CanActivateChild{
     state: RouterStateSnapshot
   ): Observable<boolean> | boolean{
 
-    console.log('Alunos guarda')
+    console.log('AlunosGuard: Guarda de rota filha')
 
     if(state.url.includes('editar')){
       // alert('Usuário sem acesso');
