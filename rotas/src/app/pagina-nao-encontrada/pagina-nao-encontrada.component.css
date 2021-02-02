@@ -1,0 +1,15 @@
+h2 i {
+  font-size: 3em;
+  animation: home ease 1s infinite;
+}
+
+@keyframes home{
+  from{
+    color: #fff;
+    text-shadow: 0 4px 6px #fff;
+  }
+  to{
+    color: #000;
+    text-shadow: 0 4px 6px #000;
+  }
+}
