@@ -1,13 +1,44 @@
 <form #f="ngForm" (ngSubmit)="onSubmit(f)">
   <div class="form-group">
-    <label for="nome" class="form-label">Nome</label>
-    <input type="text" class="form-control" id="nome" placeholder="Nome" name="nome" [(ngModel)]="usuario.nome">
+    <label for="nome" class="form-label" [class.text-danger]="!nome.valid && nome.touched">Nome</label>
+    <input
+    type="text"
+    class="form-control"
+    [class.is-invalid]="!nome.valid && nome.touched"
+    id="nome"
+    placeholder="Nome"
+    name="nome"
+    [(ngModel)]="usuario.nome"
+    required
+    #nome="ngModel">
+  </div>
+
+  <div class="alert alert-danger" role="alert" *ngIf="!nome.valid && nome.touched">
+    <span><i class="badge bg-danger material-icons">error</i> Nome é obrigatório!</span>
   </div>
 
   <div class="form-group">
-    <label for="email" class="form-label">E-mail</label>
-    <input type="email" class="form-control" id="email" placeholder="Nome@email.com" name="email" [(ngModel)]="usuario.email">
+    <label for="email" class="form-label" [class.text-danger]="!email.valid && email.touched">E-mail</label>
+    <input
+    type="email"
+    class="form-control"
+    [class.is-invalid]="!email.valid && email.touched"
+    id="email"
+    placeholder="Nome@email.com"
+    name="email"
+    [(ngModel)]="usuario.email"
+    required
+    email
+    #email="ngModel">
+    <div class="alert alert-danger" role="alert" *ngIf="!email.valid && email.touched">
+      <span><i class="badge bg-danger material-icons">error</i> Email é obrigatório!</span>
+    </div>
+    <!-- pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?" -->
   </div>
 
-  <button type="submit" class="btn btn-primary mt-3">Submit</button>
+  <button
+  type="submit"
+  class="btn btn-primary mt-3"
+  [disabled]="f.invalid"
+  >Submit</button>
 </form>
