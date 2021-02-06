@@ -1,0 +1,6 @@
+<div class="mt-5" *ngIf="form">
+  <div class="mb-3">Detalhes do formulário</div>
+  <pre class="form-control  bg-light">Formulário válido: {{ form.valid }}</pre>
+  <pre class="form-control  bg-light">Formulário subimetido: {{ form.submitted }}</pre>
+  <pre class="form-control  bg-light">Valores: {{ form.value | json }}</pre>
+</div>
